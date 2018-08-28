@@ -1,3 +1,4 @@
+using ApplicationCore.Interfaces;
 using ApplicationCore.Services;
 using Infrastructure.DataAccess;
 using Microsoft.AspNetCore.Builder;
@@ -32,8 +33,9 @@ namespace WebApi
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             #region dependency injection for entity framework dbContext
-
-            services.AddScoped<EfRepository>();
+            //register the interface with its implementation service
+            services.AddScoped<IService, EfRepository>();
+            
             services.AddDbContext<AppDbContext>(opt => opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             var buildServiceProvider = services.BuildServiceProvider();
             var appDbContext = buildServiceProvider.GetRequiredService<AppDbContext>();

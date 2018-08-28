@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ApplicationCore.Services;
+using ApplicationCore.Interfaces;
 using DataModels.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,9 +12,9 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class PetsController : ControllerBase
     {
-        private readonly EfRepository _repository;
+        private readonly IService _repository;
 
-        public PetsController(EfRepository repository)
+        public PetsController(IService repository)
         {
             _repository = repository;
         }
