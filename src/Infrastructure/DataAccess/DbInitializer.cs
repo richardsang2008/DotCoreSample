@@ -101,10 +101,6 @@ namespace Infrastructure.DataAccess
 
                 #endregion
             }
-
-            
-            
         }
-
     }
 }
