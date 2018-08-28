@@ -22,7 +22,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\ApplicationCore\ApplicationCore.csproj" />
+      <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj" />
+      <ProjectReference Include="..\DataModels\DataModels.csproj" />
+      <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
+
+    
 
 </Project>
