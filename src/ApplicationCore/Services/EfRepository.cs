@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApplicationCore.Interfaces;
 using DataModels.Entities;
 using Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApplicationCore.Services
 {
-    public class EfRepository
+    public class EfRepository :IService
     {
         #region public properties
         private readonly AppDbContext _context;
